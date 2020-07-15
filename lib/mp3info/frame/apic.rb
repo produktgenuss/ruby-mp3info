@@ -117,7 +117,7 @@ class Mp3Info
 
       uint8 :encoding_index
       href :href, :read_length => lambda {
-        require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
+        # require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
 
         sub_frame_len - 1 } # 1 - encoding byte
     end
@@ -136,7 +136,7 @@ class Mp3Info
       uint8 :image_type
       stringz :description # FIXME: now ASCII-8BIT. Need iso8859z, utf16z, utf8z classes
       string :data, :read_length => lambda {
-        require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
+        # require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
 
         sub_frame_len - 1 - mime.num_bytes - 1 - description.num_bytes } # 1 - encoding byte
     end

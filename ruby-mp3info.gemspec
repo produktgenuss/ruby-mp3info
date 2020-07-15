@@ -1,39 +1,38 @@
 # -*- encoding: utf-8 -*-
+# stub: ruby-mp3info 0.8.10 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = %q{ruby-mp3info}
+  s.name = "ruby-mp3info".freeze
   s.version = "0.8.10"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Guillaume Pierronnet"]
-  s.date = %q{2015-07-13}
-  s.description = %q{ruby-mp3info read low-level informations and manipulate tags on mp3 files.}
-  s.email = ["guillaume.pierronnet@gmail.com"]
-  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.md"]
-  s.files = ["History.txt", "Manifest.txt", "README.md", "Rakefile", "lib/mp3info.rb", "lib/mp3info/extension_modules.rb", "lib/mp3info/id3v2.rb", "test/test_ruby-mp3info.rb"]
-  s.homepage = %q{http://github.com/moumar/ruby-mp3info}
-  s.rdoc_options = ["--main", "README.md"]
-  s.require_paths = ["lib"]
-  s.rubyforge_project = %q{ruby-mp3info}
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{ruby-mp3info read low-level informations and manipulate tags on mp3 files.}
-  s.test_files = ["test/test_ruby-mp3info.rb"]
-  s.license = 'GPL-3.0'
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["Guillaume Pierronnet".freeze]
+  s.date = "2015-07-13"
+  s.description = "ruby-mp3info read low-level informations and manipulate tags on mp3 files.".freeze
+  s.email = ["guillaume.pierronnet@gmail.com".freeze]
+  s.extra_rdoc_files = ["History.txt".freeze, "Manifest.txt".freeze, "README.md".freeze]
+  s.files = ["History.txt".freeze, "Manifest.txt".freeze, "README.md".freeze, "Rakefile".freeze, "lib/mp3info.rb".freeze, "lib/mp3info/extension_modules.rb".freeze, "lib/mp3info/id3v2.rb".freeze, "test/test_ruby-mp3info.rb".freeze]
+  s.homepage = "http://github.com/moumar/ruby-mp3info".freeze
+  s.licenses = ["GPL-3.0".freeze]
+  s.rdoc_options = ["--main".freeze, "README.md".freeze]
+  s.rubygems_version = "3.1.2".freeze
+  s.summary = "ruby-mp3info read low-level informations and manipulate tags on mp3 files.".freeze
+  s.test_files = ["test/test_ruby-mp3info.rb".freeze]
 
-  s.add_dependency(%q<bindata>, ["~> 2.4.4"])
+  s.installed_by_version = "3.1.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
+  end
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rdoc>, ["~> 3.10"])
-      s.add_development_dependency(%q<hoe>, ["~> 2.12"])
-    else
-      s.add_dependency(%q<rdoc>, ["~> 3.10"])
-      s.add_dependency(%q<hoe>, ["~> 2.12"])
-    end
+  if s.respond_to? :add_runtime_dependency then
+    s.add_runtime_dependency(%q<bindata>.freeze, ["~> 2.4.4"])
+    s.add_development_dependency(%q<rdoc>.freeze, ["~> 3.10"])
+    s.add_development_dependency(%q<hoe>.freeze, ["~> 2.12"])
   else
-    s.add_dependency(%q<rdoc>, ["~> 3.10"])
-    s.add_dependency(%q<hoe>, ["~> 2.12"])
+    s.add_dependency(%q<bindata>.freeze, ["~> 2.4.4"])
+    s.add_dependency(%q<rdoc>.freeze, ["~> 3.10"])
+    s.add_dependency(%q<hoe>.freeze, ["~> 2.12"])
   end
 end

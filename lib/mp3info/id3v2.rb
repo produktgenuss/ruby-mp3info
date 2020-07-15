@@ -544,7 +544,7 @@ class ID3v2 < DelegateClass(Hash)
           return decode_chap(raw_value, size)
         end
       rescue => e
-        require 'pry'; binding.pry if $DEBUG
+        # require 'pry'; binding.pry if $DEBUG
 
         warn "warning: cannot decode chapters #{name} with raw value #{raw_value.inspect}: #{e}"
         return {}

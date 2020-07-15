@@ -48,7 +48,7 @@ class Mp3Info
         if reading?
           @obj.instance_variable_get(:@value)
         else
-          require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
+          # require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
           was =  @obj.instance_variable_get(:@value)
           now = body.num_bytes
           if now != was
@@ -79,7 +79,7 @@ class Mp3Info
         def do_read(io)
           loop do
             variables = { index: self.length - 1, element: self.last, array: self }
-            require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
+            # require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
             break unless eval_parameter(:read_if, variables)
             element = append_new_element
             element.do_read(io)
@@ -98,7 +98,7 @@ class Mp3Info
         if reading?
           @obj.instance_variable_get(:@value)
         else
-          require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
+          # require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
           # 131067
           was =  @obj.instance_variable_get(:@value)
           now = id.num_bytes + start.num_bytes + finish.num_bytes + start_offset.num_bytes + finish_offset.num_bytes + sub_frames.map(&:num_bytes).reduce(:+).to_i
@@ -119,12 +119,12 @@ class Mp3Info
       # fix upstream: without :read_until it sets zero length
       # https://github.com/dmendel/bindata/blob/v2.4.4/lib/bindata/array.rb#L278L281
       sub_frames :sub_frames, :type => :sub_frame, :read_until => lambda {
-        require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
+        # require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
         bytes_left = (chap_len - id.num_bytes - start.num_bytes - finish.num_bytes - start_offset.num_bytes - finish_offset.num_bytes)
         bytes_read = array.map(&:num_bytes).reduce(:+).to_i
         bytes_read >= bytes_left
       }, :read_if => lambda {
-        require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
+        # require 'pry'; binding.pry if $DEBUG && $DEBUG_READ
         bytes_left = (chap_len - id.num_bytes - start.num_bytes - finish.num_bytes - start_offset.num_bytes - finish_offset.num_bytes)
         # bytes_left = (chap_len - id.num_bytes - 16 - 4 - 4 - 2 - len)
         bytes_read = array.map(&:num_bytes).reduce(:+).to_i
@@ -140,7 +140,7 @@ class Mp3Info
         if reading?
           @obj.instance_variable_get(:@value)
         else
-          require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
+          # require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
           was =  @obj.instance_variable_get(:@value)
           now = children_ids.size
           if now != was
@@ -162,7 +162,7 @@ class Mp3Info
         if reading?
           @obj.instance_variable_get(:@value)
         else
-          require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
+          # require 'pry'; binding.pry if $DEBUG && $DEBUG_WRITE
           was =  @obj.instance_variable_get(:@value)
           now = body.num_bytes
           if now != was
